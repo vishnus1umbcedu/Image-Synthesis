@@ -46,5 +46,7 @@ where || · || denotes an appropriate norm."
 3. Once the graph is constructed in this way, Edmond-Karp algorithm is implemented on this graph to obtain the maximum flow and minimum cuts. The Minimum cut decides which pixel comes from which image in the overlapping region.
 
 Additional files:
+
 Find the adjacency list in AdjacencyList.txt
+
 Find the text file containing vector of pixels numbers which forms cuts in CutPixels.txt
