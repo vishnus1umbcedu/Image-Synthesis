@@ -10,9 +10,6 @@ imgmount = "C:/Users/parin/OneDrive/Desktop/Python/mountain.jpg"
 #Implementing residual graph
 #Adding neighbour matrix
 #Implementing Edmond Karp
-#Implementing min cut
-#Implementing seam
-#Inplemented converting nodes to pixels
 
 class Graph:
     def _init_(self):
@@ -236,63 +233,25 @@ while go == 1:
 #print(path_dict)
 #print(min_key)
 #print(min_value)
-#print(max_flow)
+print(max_flow)
 #print(adj_mtx)
 
-#finding min cut
-for i in range(len(min_key)):
-    j = 0
-    while ngbr_mtx[min_key[i]-1][j] != 0:
-        if ngbr_mtx[min_key[i]-1][j] in min_value:
-            j += 1
-        else:
-            if rsd_mtx[min_key[i]-1][ngbr_mtx[min_key[i]-1][j]-1] == adj_mtx[ngbr_mtx[min_key[i]-1][j]-1][min_key[i]-1]:
-                cut1.append(min_key[i])
-                cut2.append(ngbr_mtx[min_key[i]-1][j])
-            j += 1
-
-#print(rsd_mtx)
-print(cut1)
-print(cut2)
-print(max_flow)
-print(len(cut1))
-print(len(cut2))
-
-finlist = []
-finlist = [6000 for i in range (272)]
-reminder = 3
-for reminder in range (3,271):
-    for i in range (0,len(cut1)):
-        if cut1[i]%272 == reminder:
-            #print(i)
-            #print(cut1[i])
-            #print(cut2[i])
-            finlist[reminder-2] = cut1[i]
-print(finlist)
-for i in range (0, len(finlist)):
-    if finlist[i] != 6000:
-        finlist[i] = finlist[i]//272
-
-print(finlist)
 
 
-#seam= 10
-#arr = []
-#arr = [10 for i in range(272)]
+seam= 10
+arr = []
+arr = [10 for i in range(272)]
 #print(arr)
 imgnew = np.zeros((20,272,3), np.uint8)
-#cv2.imwrite("C:/Users/parin/OneDrive/Desktop/result/blankimg.jpg", imgnew)
+cv2.imwrite("C:/Users/parin/OneDrive/Desktop/result/blankimg.jpg", imgnew)
 for wid in range (0,272):
     for len in range (0,20):
-        if len < finlist[wid]+1:
+        if len < arr[wid]+1:
             imgnew[len,wid] = overlap2[len,wid]
         else:
             imgnew[len,wid] = overlap1[len,wid]
 
 cv2.imwrite("C:/Users/parin/OneDrive/Desktop/result/finimg.jpg", imgnew)
-croppedresult = cv2.vconcat([croppedimg2,imgnew])
-croppedresult = cv2.vconcat([croppedresult,croppedimg1])
-cv2.imwrite("C:/Users/parin/OneDrive/Desktop/result/mergedimg.jpg", croppedresult)
 
 #print(adj_mtx[5440][5441])
 #for i in range (0,5):
