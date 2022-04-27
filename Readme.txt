@@ -1,3 +1,7 @@
+Submitted by 
+KT16974,Parinitha Reddy Gaddam
+IK67010,Vishnu Vardhan Samba
+
 Find the executable file in “Proj1” folder
 
 Installation of dependencies:
