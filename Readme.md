@@ -1,4 +1,4 @@
-Submitted by 
+Submitted by
 KT16974,Parinitha Reddy Gaddam
 IK67010,Vishnu Vardhan Samba
 
